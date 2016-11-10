@@ -3,7 +3,7 @@
 return [
     'Api' => [
          'ServiceFallback' => '\\CakeDC\\Api\\Service\\FallbackService',
-        'renderer' => 'CakeDC/Api.Jsend',
+        'renderer' => 'CakeDC/Api.JSend',
         'parser' => 'CakeDC/Api.Form',
 
         'useVersioning' => false,
