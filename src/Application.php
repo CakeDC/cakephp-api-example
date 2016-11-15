@@ -19,6 +19,7 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use CakeDC\Api\Middleware\ApiMiddleware;
 
 /**
  * Application setup class.
@@ -41,12 +42,16 @@ class Application extends BaseApplication
             // and make an error page/response
             ->add(new ErrorHandlerMiddleware(Configure::read('Error.exceptionRenderer')))
 
+            // Apply Api 
+            ->add(new ApiMiddleware())
+			
             // Handle plugin/theme assets like CakePHP normally does.
             ->add(new AssetMiddleware())
 
-            // Apply routing
-            ->add(new RoutingMiddleware());
 
+            // Apply routing
+            ->add(new RoutingMiddleware())
+		;
         return $middleware;
     }
 }

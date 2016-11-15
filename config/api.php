@@ -11,7 +11,7 @@ return [
 
         'Auth' => [
             'Crud' => [
-                 'default' => 'auth'
+                 'default' => 'allow'
             ],
         ],
 
@@ -22,6 +22,7 @@ return [
                     'default' => [
                         //default actions options
                         'Auth' => [
+							'allow' => '*',
                             'authorize' => [
                                 'CakeDC/Api.Crud' => []
                             ],
